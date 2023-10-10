@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+  final void Function() startQuiz;
+  const StartPage(this.startQuiz, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,12 @@ class StartPage extends StatelessWidget {
           ),
           const SizedBox(height: 34),
           const Text(
-            'Learn a flutter the fun way!!',
+            'Learn flutter in the fun way!!',
             style: TextStyle(color: Colors.white, fontSize: 24),
           ),
           const SizedBox(height: 16),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
             label: const Text('Start Quiz'),
             icon: const Icon(
