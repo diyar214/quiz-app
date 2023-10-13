@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:questions_app/answer_button.dart';
 import 'package:questions_app/data/questions.dart';
 
 class QuestionsPage extends StatefulWidget {
-  const QuestionsPage({super.key});
+  final void Function(String answer) onSelectAnswer;
+  const QuestionsPage({super.key, required this.onSelectAnswer});
 
   @override
   State<QuestionsPage> createState() => _QuestionsPageState();
@@ -13,7 +15,8 @@ class QuestionsPage extends StatefulWidget {
 class _QuestionsPageState extends State<QuestionsPage> {
   int index = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       index++;
     });
@@ -32,12 +35,17 @@ class _QuestionsPageState extends State<QuestionsPage> {
           children: [
             Text(
               currentQuestion.questionText,
-              style: const TextStyle(color: Colors.white),
+              style: GoogleFonts.lato(
+                  color: const Color.fromARGB(255, 249, 224, 255),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map((item) =>
-                AnswerButton(answerText: item, onPressed: answerQuestion)),
+            ...currentQuestion.getShuffledAnswers().map((answer) =>
+                AnswerButton(
+                    answerText: answer,
+                    onPressed: () => answerQuestion(answer))),
           ],
         ),
       ),
