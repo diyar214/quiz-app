@@ -7,13 +7,13 @@ Hi! This app is one of the fundamental projects and the easiest to build. Feel f
 
 Follow these steps to set up the Quiz-App app:
 
-#### **Prerequisites**
+### **Prerequisites**
 
 Before you begin, make sure you have the following installed:
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install): The framework used to develop the quiz-app.
 
-#### **Installation**
+### **Installation**
 
 1. Clone the repository:
 
