@@ -5,13 +5,14 @@ Hi! This app is one of the fundamental projects and the easiest to build. Feel f
 
 ## Getting Started
 
-Follow these steps to set up the Quiz-App app:
+Follow these steps to set up the Quiz-App:
 
 ### **Prerequisites**
 
 Before you begin, make sure you have the following installed:
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install): The framework used to develop the quiz-app.
+- [google_fonts](https://pub.dev/packages/google_fonts): A Flutter package to use fonts from fonts.google.com.
 
 ### **Installation**
 
