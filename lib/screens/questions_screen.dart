@@ -42,10 +42,8 @@ class _QuestionsPageState extends State<QuestionsPage> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map((answer) =>
-                AnswerButton(
-                    answerText: answer,
-                    onPressed: () => answerQuestion(answer))),
+            ...currentQuestion.shuffledAnswers.map((answer) => AnswerButton(
+                answerText: answer, onPressed: () => answerQuestion(answer))),
           ],
         ),
       ),
